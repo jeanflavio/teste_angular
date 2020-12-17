@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>email</th>
+      <th>nome</th>
+      <th>Sobrenome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let user of users.data | paginate: {itemsPerPage:5,currentPage:p}" >
+      <td>{{user.id}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+    </tr>
+  </tbody>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</table>
